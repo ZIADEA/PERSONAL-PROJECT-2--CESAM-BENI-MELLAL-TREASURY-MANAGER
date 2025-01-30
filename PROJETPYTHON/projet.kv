@@ -1,0 +1,44 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    Button:
+        text: "Enregistrer une cotisation"
+        on_release: app.enregistrer_cotisation(root)
+
+    Button:
+        text: "Enregistrer une entrée d'argent"
+        on_release: app.enregistrer_entree_argent(root)
+
+    Button:
+        text: "Enregistrer une dépense"
+        on_release: app.enregistrer_depense(root)
+
+    Button:
+        text: "Afficher le solde total"
+        on_release: app.afficher_solde(root)
+
+    Button:
+        text: "HISTORIQUE DE COTISATION"
+        on_release: app.afficher_historique_cotisations(root)
+
+    Button:
+        text: "TRESORERIE DE LA CESAM"  # Bouton inactif en guise de titre
+        background_color: 0, 0, 0, 0  # Couleur de fond transparente
+        disabled: True
+
+<PopupLabel>:
+    Label:
+        text: root.text
+        size_hint: 1, None
+        height: self.texture_size[1]  # Ajuster la hauteur du Label au contenu
+
+# Ajout d'un deuxième Popup pour afficher l'historique des dépenses
+<PopupDepensesLabel>:
+    Label:
+        text: root.text
+        size_hint: 1, None
+        height: self.texture_size[1]  # Ajuster la hauteur du Label au contenu
+
+
+
+
